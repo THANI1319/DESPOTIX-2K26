@@ -1,0 +1,591 @@
+/* =========================
+   Global Styles
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: #0d0d0d;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* =========================
+   Logo & Hero
+========================= */
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero.small {
+  padding: 70px 20px;
+}
+
+.neon-text {
+  font-size: 3.5rem;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+.neon-text span {
+  color: #ff00ff;
+}
+
+.tagline {
+  margin: 15px 0;
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/* =========================
+   Buttons
+========================= */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: 2px solid #0ff;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background: #0ff;
+  color: #000;
+}
+
+.btn-small {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-small:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* =========================
+   Homepage - Events (Enhanced)
+========================= */
+.section-title {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 12px #00eaff, 0 0 24px #ff00de;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
+
+.event-card {
+  padding: 50px 25px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, background 0.8s ease;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.event-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #00eaff, 0 0 50px #ff00de;
+  background-size: 300% 300%;
+  animation: floatCard 6s ease-in-out infinite, gradientShift 5s ease infinite;
+}
+
+/* Individual Event Colors with gradients */
+.event-card.pixel { background: linear-gradient(135deg, #1e90ff, #00eaff, #6ec1ff); }
+.event-card.huntiux { background: linear-gradient(135deg, #ff4500, #ff6ec7, #ff8a65); }
+.event-card.techscribe { background: linear-gradient(135deg, #20e3b2, #00ffcc, #32cd32); }
+.event-card.brainchain { background: linear-gradient(135deg, #9400d3, #ff00ff, #b28cff); }
+
+/* =========================
+   Event Info Boxes
+========================= */
+.event-info {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.info-box {
+  background: rgba(0, 0, 0, 0.82);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 0 30px #00eaffaa, 0 0 40px #ff00de88;
+  border-color: #00eaff;
+}
+
+.info-box h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.info-box a {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #00eaff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.info-box a:hover {
+  color: #ff00de;
+  text-shadow: 0 0 12px #ff00deaa, 0 0 24px #00eaff;
+}
+
+/* =========================
+   Rules & Guidelines
+========================= */
+.rules-guidelines {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.rules-box, .guidelines-box {
+  background: rgba(0,0,0,0.75);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: left;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.rules-box:hover, .guidelines-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px #00eaff66, 0 0 35px #ff00de44;
+}
+
+.rules-box h2, .guidelines-box h2 {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.4rem;
+  background: linear-gradient(90deg,#00eaff,#ff00de);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rules-box ul, .guidelines-box ul {
+  list-style: none;
+  padding-left: 0;
+  color: #e6e6e6;
+}
+
+.rules-box li, .guidelines-box li {
+  margin: 8px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 22px;
+}
+
+.rules-box li::before, .guidelines-box li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00eaff;
+}
+
+/* =========================
+   Contact Us
+========================= */
+.contact {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.contact-box {
+  background: rgba(0,0,0,0.78);
+  border: 2px solid rgba(255,255,255,0.18);
+  border-radius: 15px;
+  padding: 20px;
+  width: 260px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.contact-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00eaff88;
+}
+
+.copy {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* =========================
+   Background Animations
+========================= */
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 10000px 5000px; }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Home background */
+.home-bg {
+  background: linear-gradient(270deg, #141e30, #243b55, #0f2027);
+  background-size: 600% 600%;
+  animation: gradientShift 25s ease infinite;
+  min-height: 100vh;
+}
+
+/* PixelCraft - Neon Galaxy */
+.pixelcraft-bg {
+  background: url("https://www.transparenttextures.com/patterns/stardust.png"),
+              radial-gradient(circle at top left, #ff6ec7, #00f0ff22, #1a1a2e);
+  animation: moveStars 220s linear infinite, gradientShift 25s ease infinite;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* Huntiux - Cyber Grid */
+.huntiux-bg {
+  background: url("https://www.transparenttextures.com/patterns/dark-mosaic.png"),
+              linear-gradient(135deg, #1a1a2e, #0f3a43, #2c5364);
+  animation: gradientShift 30s ease infinite;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* TechScribe - Flowing Ink Waves */
+.techscribe-bg {
+  background: url("https://www.transparenttextures.com/patterns/asfalt-light.png"),
+              linear-gradient(270deg, #00cfff, #0072ff, #4dd2ff);
+  background-size: cover, 600% 600%;
+  animation: gradientShift 22s ease infinite;
+  min-height: 100vh;
+}
+
+/* BrainChain - Neural Sparks */
+.brainchain-bg {
+  background: url("https://www.transparenttextures.com/patterns/cubes.png"),
+              linear-gradient(45deg, #2c1f3c, #a492db, #000000);
+  animation: gradientShift 28s ease infinite;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* =========================
+   Cursor Trail
+========================= */
+.cursor-trail {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #ff00de, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: fadeOut 0.8s forwards;
+  z-index: 9999;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: scale(2); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+  .neon-text { font-size: 2.4rem; }
+  .event-grid { grid-template-columns: 1fr; padding: 10px; }
+  .rules-guidelines { padding: 20px; gap: 16px; grid-template-columns: 1fr; }
+  .event-info { padding: 20px; }
+}
+.logo-wrapper {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #00eaff, #ff00de, #00ffcc);
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+}
+
+.logo-img {
+  width: 120px;
+  border-radius: 15px;
+  display: block;
+}
+.tagline {
+  margin: 15px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00eaff, #ff00de, #00ffcc);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s linear infinite;
+}
+/* Neon Animated Event Name */
+.animate-logo {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, #00eaff, #ff00de, #00ffcc, #00eaff);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: logoGradient 6s linear infinite, logoGlow 2s ease-in-out infinite alternate;
+}
+
+/* Gradient color flow */
+@keyframes logoGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pulsing neon glow */
+@keyframes logoGlow {
+  from { text-shadow: 0 0 10px #00eaff, 0 0 20px #ff00de; }
+  to   { text-shadow: 0 0 20px #00eaff, 0 0 40px #ff00de, 0 0 60px #00ffcc; }
+}
+
+/* Gradient shifting animation */
+@keyframes titleGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Neon glow animation */
+@keyframes titleGlow {
+  from { text-shadow: 0 0 10px #fff, 0 0 20px currentColor; }
+  to   { text-shadow: 0 0 20px #fff, 0 0 40px currentColor, 0 0 60px currentColor; }
+}
+
+/* Sliding + Neon Glow for Symposium Name */
+.sliding-logo {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: 3.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 40px 0;
+}
+
+.sliding-logo span {
+  opacity: 0;
+  transform: translateY(-50px);
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #ff00de, 0 0 40px #00ffcc;
+  animation: slideIn 0.6s forwards, glowPulse 2s infinite alternate;
+}
+
+.sliding-logo span:nth-child(1) { animation-delay: 0.1s; }
+.sliding-logo span:nth-child(2) { animation-delay: 0.2s; }
+.sliding-logo span:nth-child(3) { animation-delay: 0.3s; }
+.sliding-logo span:nth-child(4) { animation-delay: 0.4s; }
+.sliding-logo span:nth-child(5) { animation-delay: 0.5s; }
+.sliding-logo span:nth-child(6) { animation-delay: 0.6s; }
+.sliding-logo span:nth-child(7) { animation-delay: 0.7s; }
+.sliding-logo span:nth-child(8) { animation-delay: 0.8s; }
+.sliding-logo span:nth-child(9) { animation-delay: 0.9s; }
+.sliding-logo span:nth-child(10){ animation-delay: 1.0s; }
+.sliding-logo span:nth-child(11){ animation-delay: 1.1s; }
+.sliding-logo span:nth-child(12){ animation-delay: 1.2s; }
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  from { text-shadow: 0 0 10px #00eaff, 0 0 20px #ff00de; }
+  to   { text-shadow: 0 0 20px #00eaff, 0 0 40px #ff00de, 0 0 60px #00ffcc; }
+}
+/* Base sliding title style */
+.sliding-title {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 3.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 40px 0;
+}
+
+.sliding-title span {
+  opacity: 0;
+  animation: glowPulse 2s infinite alternate;
+}
+
+/* PixelCraft - slide from top */
+.pixelcraft-title span {
+  color: #003cffff;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #ff00de;
+  transform: translateY(-50px);
+  animation: slideFromTop 0.6s forwards, glowPulse 2s infinite alternate;
+}
+.pixelcraft-title span:nth-child(n) { animation-delay: calc(0.1s * var(--i)); }
+
+/* Huntrix - slide from bottom */
+.huntiux-title span {
+  color: #ff4500;
+  text-shadow: 0 0 10px #ff8a65, 0 0 20px #ff4500;
+  transform: translateY(50px);
+  animation: slideFromBottom 0.6s forwards, glowPulse 2s infinite alternate;
+}
+.huntiux-title span:nth-child(n) { animation-delay: calc(0.1s * var(--i)); }
+
+/* TechScribe - slide from left */
+.techscribe-title span {
+  color: #d60404ff;
+  text-shadow: 0 0 10px #0072ff, 0 0 20px #00cfff;
+  transform: translateX(-50px);
+  animation: slideFromLeft 0.6s forwards, glowPulse 2s infinite alternate;
+}
+.techscribe-title span:nth-child(n) { animation-delay: calc(0.1s * var(--i)); }
+
+/* BrainChain - slide from right */
+.brainchain-title span {
+  color: #f80021cc;
+  text-shadow: 0 0 10px #b28cff, 0 0 20px #ffcc00;
+  transform: translateX(50px);
+  animation: slideFromRight 0.6s forwards, glowPulse 2s infinite alternate;
+}
+.brainchain-title span:nth-child(n) { animation-delay: calc(0.1s * var(--i)); }
+
+/* Keyframes */
+@keyframes slideFromTop {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideFromBottom {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideFromLeft {
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideFromRight {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Glow pulse (shared) */
+@keyframes glowPulse {
+  from { text-shadow: 0 0 10px currentColor, 0 0 20px currentColor; }
+  to   { text-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor; }
+}
+/* Text-based logo */
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #00eaff, #ff00de, #9400d3);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  letter-spacing: 3px;
+  animation: logoGradient 6s linear infinite, logoFloat 3s ease-in-out infinite;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+/* Gradient animation */
+@keyframes logoGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating animation */
+@keyframes logoFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* Hover glow */
+.logo-text:hover {
+  text-shadow: 0 0 15px #00eaff, 0 0 30px #ff00de;
+}
+/* Logo styling */
+.college-logo {
+  height: 80px;        /* adjust the height as needed */
+  width: auto;          /* maintain aspect ratio */
+  display: inline-block;
+  vertical-align: middle;
+  animation: floatLogo 4s ease-in-out infinite;
+  border-radius: 8px;   /* optional, subtle rounded corners */
+  box-shadow: 0 0 15px #0ff88, 0 0 30px #ff00dd44; /* subtle glow */
+}
+
+/* Floating animation */
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
